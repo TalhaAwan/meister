@@ -1,0 +1,70 @@
+
+
+
+
+
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <? include ../partials/head ?>
+</head>
+
+
+<body class="container">
+
+    <header>
+        <? include ../partials/header ?>
+    </header>
+
+    <main>
+       <div class="statusMessage" style="color: green">
+        <?= successMessage ?>
+    </div>
+    <div class="jumbotron">
+        <h2><?= title ?></h2>
+
+        <form action="/contact" method="POST">
+            <input type="email" name="email" placeholder="email"><br><br>
+
+            <textarea name="message" rows="5" placeholder="message"></textarea> <br>
+
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</main>
+
+<footer>
+    <? include ../partials/footer ?>
+</footer>
+
+</body>
+
+<style>
+    table {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+
+<script>
+
+
+    $(document).ready(function(){
+        setTimeout(function(){
+            $(".statusMessage").hide("slow")
+        }, 5000)
+
+    })
+
+</script>
+
+</html>
